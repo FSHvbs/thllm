@@ -5,9 +5,9 @@ from langchain.embeddings import HuggingFaceEmbeddings
 
 # Initialize model
 model = Llama(
-    model_path="models/phi-35-mini.gguf",
-    n_ctx=128000,
-    n_threads=4
+    model_path="/home/azureuser/models/phi-35-mini.gguf",
+    n_ctx=26000,  # ideally 128000, 26k takes around 10GB
+    n_threads=4  # ideally 4
 )
 
 # Simple chat interface
