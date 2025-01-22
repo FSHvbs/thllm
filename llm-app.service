@@ -1,0 +1,15 @@
+# /etc/systemd/system/llm-app.service:
+ini
+[Unit]
+Description=LLM Application
+After=network.target
+
+[Service]
+User=azureuser
+WorkingDirectory=/home/azureuser
+Environment="PATH=/home/azureuser/llm_env/bin"
+ExecStart=/home/azureuser/llm_env/bin/python app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
